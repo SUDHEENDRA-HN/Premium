@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Premium Prediction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 20px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      h4 {
+        color: #555;
+      }
+
+      form {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Insurance Premium Prediction</h1>
+    <h4>after encoding the variables we have assigned in sex column 0 is assigned to
+       female and 1 is assigned to male</h4>
+       <h4>in smoker column 0 is assigned to non-smoker  and 1 is assigned is smoker</h4>
+       <h4>in region column 0 is assigned to northeast,1 is assigned to northwest,2
+        is assigned to southeast, 3 is assigned to southwest</h4>
+
+    <form action="{% url 'result' %}">
+     {% csrf_token %}
+   <p>age</p>
+   <input type="text" name="age"></input>
+   <p>sex</p>
+   <input type="text" name="sex"></input>
+   <p>bmi</p>
+   <input type="text" name="bmi"></input>
+   <p>children</p>
+   <input type="text" name="children"></input>
+   <p>smoker</p>
+   <input type="text" name="smoker"></input>
+   <p>region</p>
+   <input type="text" name="region"></input>
+   <input type="submit"></input>
+ </form>
+  </body>
+</html>
